@@ -1,0 +1,55 @@
+{
+  "name": "react-input-with-drag",
+  "version": "2.0.0",
+  "description": "Adjust values in numeric input boxes by clicking and dragging horizontally, just like in Blender and similar 3D applications.",
+  "keywords": [
+    "react",
+    "input",
+    "draggable",
+    "scrubb",
+    "click-and-drag input",
+    "interactive number field",
+    "blender"
+  ],
+  "author": "Adrian von Gegerfelt <adrian@designbyadrian.com>",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/designbyadrian/react-input-with-drag.git"
+  },
+  "bugs": {
+    "url": "https://github.com/designbyadrian/react-input-with-drag/issues"
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "dev": "storybook dev -p 6006 --no-open",
+    "build-storybook": "storybook build",
+    "build": "vite build && tsc --project tsconfig.json",
+    "build:types": "tsc --emitDeclarationOnly"
+  },
+  "devDependencies": {
+    "@chromatic-com/storybook": "3.2.2",
+    "@storybook/addon-a11y": "^8.5.0-alpha.3",
+    "@storybook/addon-essentials": "8.5.0-alpha.3",
+    "@storybook/addon-interactions": "8.5.0-alpha.3",
+    "@storybook/addon-links": "8.5.0-alpha.3",
+    "@storybook/addon-onboarding": "8.5.0-alpha.3",
+    "@storybook/blocks": "8.5.0-alpha.3",
+    "@storybook/react": "8.5.0-alpha.3",
+    "@storybook/react-vite": "8.5.0-alpha.3",
+    "@storybook/test": "8.5.0-alpha.3",
+    "@types/react": "18.3.12",
+    "@vitejs/plugin-react": "4.3.3",
+    "eslint": "9.14.0",
+    "storybook": "8.5.0-alpha.3",
+    "typescript": "5.6.3",
+    "vite": "5.4.10"
+  }
+}

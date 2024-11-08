@@ -1,0 +1,78 @@
+import { Meta } from '@storybook/blocks';
+
+import MaskedInput from '../src/MaskedInput';
+
+<Meta title="Introduction" />
+
+# React Interactive Input 👈
+
+In Blender and similar 3D applications, users can adjust values in numeric input boxes by clicking and dragging horizontally, often referred to as **scrubbing.**
+
+The user typically clicks and holds the mouse over the number, then drags left or right to decrease or increase the value smoothly. This provides quick, precise control over numeric adjustments without needing to type manually or rely on up/down arrows.
+
+This component is a React implementation of that behavior, with a few additional features and customizations.
+
+### Usage
+
+```jsx
+import InteractiveInput from 'react-interactive-input';
+
+function MyComponent() {
+  return (
+    <InteractiveInput
+      value={42}
+      onChange={(value) => console.log(value)}
+    />
+  );
+}
+```
+
+### Attributes
+
+The InteractiveInput component accepts all properties of the HTMLInputElement element,
+especially the following attributes:
+
+- `value`: The initial value of the input field.
+- `onChange`: A callback function that receives the new value when it changes.
+- `step`: The amount to increment or decrement the value when scrubbing.
+- `min`: The minimum value allowed.
+- `max`: The maximum value allowed.
+
+## Input Masking for Negative Number Handling
+
+This package uses a custom input component featuring input masking specifically designed to address limitations with negative numbers in standard HTML input elements. This component ensures that negative values are properly formatted and accepted by the input field, preventing unexpected behavior or errors when handling signed numbers.
+
+The component called `MaskedInput` is exported as an extra. You're welcome!
+
+### Usage
+
+```jsx
+import { MaskedInput } from 'react-interactive-input';
+
+function MyComponent() {
+  return (
+    <MaskedInput
+      value="-4.2"
+      onChange={(e) => console.log(parseFloat(e.target.value))}
+    />
+  );
+}
+```
+
+You can provide your own masking function to customize the behavior of the input field.
+
+Example:
+
+```jsx
+import { MaskedInput } from 'react-interactive-input';
+
+function MyComponent() {
+  return (
+    <MaskedInput
+      value="-4.2"
+      onChange={(e) => console.log(parseFloat(e.target.value))}
+      mask={(value) => value.replace(/[^0-9.-]/g, '')}
+    />
+  );
+}
+```
