@@ -7,14 +7,13 @@ export default defineConfig({
     lib: {
       entry: 'src/index.ts',
       name: 'React Interactive Input',
-      formats: ['es', 'umd'],
+      formats: ['es', 'cjs'],
       fileName: format => `react-interactive-input.${format}.js`,
     },
     rollupOptions: {
       // Externalize dependencies that shouldn't be bundled
       external: ['react', 'react-dom'],
       output: {
-        exports: 'named',
         globals: {
           react: 'React',
           'react-dom': 'ReactDOM',

@@ -150,11 +150,11 @@ export default function InteractiveInput({
 
   return (
     <MaskedInput
-      className={props.className}
+      {...props}
+      style={style}
       onChange={handleChange}
       onMouseDown={handleMouseDown}
       value={inputValue}
-      style={style}
     />
   );
 }

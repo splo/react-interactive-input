@@ -3,6 +3,8 @@
   <h1>React Interactive Input</h1>
 </center>
 
+![NPM Version](https://img.shields.io/npm/v/%40designbyadrian%2Freact-interactive-input?style=for-the-badge) ![GitHub License](https://img.shields.io/github/license/designbyadrian/react-interactive-input?style=for-the-badge)
+
 In Blender and similar 3D applications, users can adjust values in numeric input boxes by clicking and dragging horizontally, often referred to as **scrubbing.**
 
 The user typically clicks and holds the mouse over the number, then drags left or right to decrease or increase the value smoothly. This provides quick, precise control over numeric adjustments without needing to type manually or rely on up/down arrows.
@@ -18,6 +20,12 @@ This component is a React implementation of that behavior, with a few additional
 - **Theming**: Easily customize styles to match your application's look and feel.
 - **Accessibility**: Built with accessibility in mind.
 
+## Try it out
+
+You can try out the component in the [Storybook](https://designbyadrian.github.io/react-interactive-input).
+
+🦄🕹️🍕
+
 ## Installation
 
 To install the library, use npm or yarn:
@@ -31,7 +39,7 @@ yarn add @designbyadrian/react-interactive-input
 ## Usage
 
 ```jsx
-import InteractiveInput from '@designbyadrian/react-interactive-input';
+import { InteractiveInput } from '@designbyadrian/react-interactive-input';
 
 function MyComponent() {
   return <InteractiveInput value={42} onChange={value => console.log(value)} />;

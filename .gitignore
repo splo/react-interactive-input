@@ -8,6 +8,7 @@
 
 # production
 /dist
+/storybook-static
 
 # misc
 .DS_Store
@@ -20,5 +21,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
 build-storybook.log
+
+*.tgz

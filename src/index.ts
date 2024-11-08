@@ -1,5 +1,5 @@
-import { default as InteractiveInput } from './InteractiveInput';
+import InteractiveInput from './InteractiveInput';
 
-export { default as MaskedInput } from './MaskedInput';
+import MaskedInput from './MaskedInput';
 
-export default InteractiveInput;
+export { InteractiveInput, MaskedInput };

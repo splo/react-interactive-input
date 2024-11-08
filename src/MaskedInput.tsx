@@ -17,7 +17,7 @@ const numberMask = createNumberMask();
  * A React input component featuring input masking specifically designed to address limitations with negative numbers in standard HTML input elements. This component ensures that negative values are properly formatted and accepted by the input field, preventing unexpected behavior or errors when handling signed numbers.
  */
 const MaskedInput = forwardRef<HTMLInputElement, MaskedInputProps>(
-  ({ mask = numberMask, onChange, step = '1', value, ...props }, ref) => {
+  ({ mask = numberMask, onChange, step = 1, value, ...props }, ref) => {
     const [_value, setValue] = useState(value || '');
     const inputRef = ref || useRef<HTMLInputElement>(null);
 
@@ -45,7 +45,7 @@ const MaskedInput = forwardRef<HTMLInputElement, MaskedInputProps>(
     ) => {
       const currentValue = parseFloat(_value.replace(',', '.')) || 0;
       const stepValue = parseFloat(step.toString());
-      const decimalPlaces = getDecimalPlaces(step);
+      const decimalPlaces = getDecimalPlaces(+step);
       const newValue = increment
         ? currentValue + stepValue
         : currentValue - stepValue;
