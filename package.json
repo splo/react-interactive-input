@@ -1,6 +1,6 @@
 {
   "name": "@designbyadrian/react-interactive-input",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Adjust values in numeric input boxes by clicking and dragging horizontally, just like in Blender and similar 3D applications.",
   "keywords": [
     "react",
@@ -29,11 +29,19 @@
     "prepublishOnly": "npm run build",
     "deploy-storybook": "npm run build-storybook && touch ./storybook-static/.nojekyll && gh-pages -d storybook-static -t true"
   },
-  "main": "dist/react-interactive-input.cjs.js",
-  "module": "dist/react-interactive-input.es.js",
   "types": "dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/react-interactive-input.cjs.js",
+      "import": "./dist/react-interactive-input.es.js",
+      "types": "./dist/types/index.d.ts"
+    }
+  },
+  "main": "./dist/react-interactive-input.cjs.js",
+  "module": "./dist/react-interactive-input.es.js",
   "files": [
-    "dist"
+    "dist",
+    "dist/types"
   ],
   "peerDependencies": {
     "react": "^18.2.0",
