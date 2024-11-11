@@ -3,7 +3,7 @@
   <h1>React Interactive Input</h1>
 </center>
 
-![NPM Version](https://img.shields.io/npm/v/%40designbyadrian%2Freact-interactive-input?style=for-the-badge) ![GitHub License](https://img.shields.io/github/license/designbyadrian/react-interactive-input?style=for-the-badge)
+![NPM Version](https://img.shields.io/npm/v/%40designbyadrian%2Freact-interactive-input?style=for-the-badge) ![NPM Unpacked Size](https://img.shields.io/npm/unpacked-size/%40designbyadrian%2Freact-interactive-input?style=for-the-badge&label=size) ![npm bundle size](https://img.shields.io/bundlephobia/min/%40designbyadrian/react-interactive-input/2.0.2?style=for-the-badge&label=minified) ![GitHub License](https://img.shields.io/github/license/designbyadrian/react-interactive-input?style=for-the-badge)
 
 In Blender and similar 3D applications, users can adjust values in numeric input boxes by clicking and dragging horizontally, often referred to as **scrubbing.**
 
