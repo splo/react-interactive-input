@@ -1,7 +1,7 @@
 import { forwardRef, useEffect, useRef, useState } from 'react';
 
 import { type MaskFunction, createNumberMask } from './masks';
-import { getDecimalPlaces } from './utils';
+import { createChangeEvent, getDecimalPlaces } from './utils';
 
 interface MaskedInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   /**
@@ -22,20 +22,14 @@ const MaskedInput = forwardRef<HTMLInputElement, MaskedInputProps>(
     const inputRef = ref || useRef<HTMLInputElement>(null);
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+      event.persist();
       const { value } = event.target;
       const maskedValue = mask(value);
 
       setValue(maskedValue);
 
       if (onChange) {
-        const newEvent = {
-          ...event,
-          target: {
-            ...event.target,
-            value: maskedValue.replace(',', '.'),
-          },
-        };
-        onChange(newEvent as React.ChangeEvent<HTMLInputElement>);
+        onChange(createChangeEvent(event, maskedValue.replace(',', '.')));
       }
     };
 
@@ -43,6 +37,8 @@ const MaskedInput = forwardRef<HTMLInputElement, MaskedInputProps>(
       e: React.KeyboardEvent<HTMLInputElement>,
       increment: boolean
     ) => {
+      e.persist();
+      const target = e.target as HTMLInputElement;
       const currentValue = parseFloat(_value.replace(',', '.')) || 0;
       const stepValue = parseFloat(step.toString());
       const decimalPlaces = getDecimalPlaces(+step);
@@ -59,8 +55,9 @@ const MaskedInput = forwardRef<HTMLInputElement, MaskedInputProps>(
         const newEvent = {
           ...event,
           target: {
-            ...e.target,
+            ...target,
             value: maskedValue.replace(',', '.'),
+            name: target.name,
           },
         };
         onChange(newEvent as unknown as React.ChangeEvent<HTMLInputElement>);

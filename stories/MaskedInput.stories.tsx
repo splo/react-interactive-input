@@ -17,7 +17,7 @@ export const Default: Story = {
     <div style={{ display: 'flex', flexDirection: 'column' }}>
       <div>
         <p>The component</p>
-        <MaskedInput {...args} />
+        <MaskedInput name="default-input" {...args} />
       </div>
       <div>
         <p>
@@ -30,7 +30,7 @@ export const Default: Story = {
   ),
   args: {
     onChange: e => {
-      console.log(parseFloat(e.target.value));
+      console.log('handleChange', parseFloat(e.target.value), e);
     },
   },
 };

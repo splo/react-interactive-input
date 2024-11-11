@@ -12,7 +12,15 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = { args: {} };
+export const Default: Story = {
+  args: {
+    onChange: e => {
+      console.log('handleChange', parseFloat(e.target.value), e);
+    },
+  },
+
+  render: args => <InteractiveInput name="interactive-input" {...args} />,
+};
 
 export const LargeSteps: Story = {
   args: {
@@ -28,5 +36,7 @@ export const MinMaxValue: Story = {
 };
 
 export const WithCustomClass: Story = {
-  render: () => <InteractiveInput className="fancy-input" />,
+  render: () => (
+    <InteractiveInput name="interactive-input" className="fancy-input" />
+  ),
 };

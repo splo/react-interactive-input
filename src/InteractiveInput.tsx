@@ -53,6 +53,7 @@ export default function InteractiveInput({
 
   const handleMove = useCallback(
     (e: MouseEvent) => {
+      const target = e.target as HTMLInputElement;
       setStartPos(pos => {
         const { clientX: x2, clientY: y2 } = e;
         const [x1, y1] = pos;
@@ -81,8 +82,9 @@ export default function InteractiveInput({
           const newEvent = {
             ...event,
             target: {
-              ...e.target,
+              ...target,
               value: newValue,
+              name: target.name,
             },
           };
           props.onChange(
